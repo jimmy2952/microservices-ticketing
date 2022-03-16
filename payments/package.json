@@ -1,5 +1,5 @@
 {
-  "name": "tickets",
+  "name": "payments",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -12,7 +12,8 @@
     "testEnvironment": "node",
     "setupFilesAfterEnv": [
       "./src/test/setup.ts"
-    ]
+    ],
+    "testTimeout": 600000
   },
   "keywords": [],
   "author": "",
@@ -29,6 +30,7 @@
     "express-validator": "^6.14.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose-update-if-current": "^1.4.0",
+    "stripe": "^8.209.0",
     "ts-node-dev": "^1.1.8",
     "typescript": "^4.5.5"
   },
