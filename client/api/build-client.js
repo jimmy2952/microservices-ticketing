@@ -1,17 +1,18 @@
 import axios from 'axios';
 
-export default function({ req }) {
+export default ({ req }) => {
   if (typeof window === 'undefined') {
-    // on the server
+    // We are on the server
+
     return axios.create({
-      baseURL: 'http://ingress-nginx-controller.ingress-nginx.svc.cluster.local',
-      headers: req.headers
+      baseURL:
+        'http://ingress-nginx-controller.ingress-nginx.svc.cluster.local',
+      headers: req.headers,
     });
   } else {
-    // for the redirect case
-    // on the browser
+    // We must be on the browser
     return axios.create({
-      baseURL: '/'
+      baseUrl: '/',
     });
   }
-}
+};
